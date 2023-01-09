@@ -26,16 +26,22 @@ class _DicePageState extends State<DicePage> {
   int rightDiceNumber = 1;
 
   void changeDiceFace(String side) {
-    var side1 = '$side';
+//    var side1 = '$side';
 //    print("Value of side1 = $side");
     setState(() {
       leftDiceNumber = Random().nextInt(6) + 1;
       rightDiceNumber = Random().nextInt(6) + 1;
     });
-    var side2 = '$side1';
-    print("$side button pressed");
-    print(
-        '$side dice number = ${side2}DiceNumber'); //string interpolation inside string interpolation is not possible in Dart
+    if (side == "Left") {
+      print("Left button pressed");
+      print(
+          'Left dice number = $leftDiceNumber'); //string interpolation inside string interpolation is not possible in Dart
+    } else {
+      print("Right button pressed");
+
+      print(
+          'Right dice number = $rightDiceNumber'); //string interpolation inside string interpolation is not possible in Dart
+    }
   }
 
   @override
